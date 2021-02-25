@@ -1,0 +1,133 @@
+.hero {
+  min-height: 100vh;
+  background-color: antiquewhite;
+  padding: 100px 20px 50px;
+  background: url("../../images/fondo-hero.png") center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+  .circle {
+    background: url("../../images/esfera-arriba.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 60%;
+    max-width: 500px;
+    perspective: 800px;
+    animation: two 10s infinite;
+    animation-direction: alternate;
+    img {
+      width: 100%;
+      padding: 23% 20% 20%;
+    }
+    img.logo-sadeca {
+      width: 28%;
+      padding: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 35px;
+    }
+  }
+}
+
+@keyframes two {
+  0% {
+    transform: rotateY(-20deg);
+  }
+  50% {
+    transform: rotateY(20deg);
+  }
+
+  100% {
+    transform: rotateY(-20deg);
+  }
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  width: 30px;
+  height: 50px;
+  border: 3px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 60%;
+  box-shadow: 0px 2px 20px 1px rgba(0, 0, 0, 0.8);
+}
+.scroll-down::after,
+.scroll-down::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  border: 2px solid white;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -60%) rotate(45deg);
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+.scroll-down::after {
+  top: 30%;
+}
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+    animation-delay: 0.3s;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 70%;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .hero {
+    padding: 20px 20px 120px;
+
+    .circle {
+      width: 100%;
+
+      img {
+        width: 100%;
+        padding: 20% 20% 35%;
+      }
+      img.logo-sadeca {
+        top: 25px;
+      }
+    }
+  }
+
+  .scroll-down {
+    bottom: 100px;
+  }
+}
+@media screen and (max-height: 655px) {
+  .hero {
+    padding: 0px 20px;
+    .circle {
+      margin-top: -20px;
+      width: 50vh;
+
+      img {
+        width: 100%;
+        padding: 23% 20% 20%;
+      }
+      img.logo-sadeca {
+        top: 25px;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.programa {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 50px;
+}
+
+@media screen and (orientation: portrait) {
+  .programa {
+    padding: 50px 20px;
+    font-size: 1rem;
+  }
+}
